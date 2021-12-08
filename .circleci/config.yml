@@ -33,7 +33,8 @@ jobs:
           command: |
             sudo wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64 &&\
               sudo chmod +x /bin/hadolint &&\
-              pip install pylint
+              pip install --upgrade pip &&\
+              pip install pylint --user
               
       - save_cache:
           paths:
