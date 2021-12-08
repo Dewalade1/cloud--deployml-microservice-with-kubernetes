@@ -26,13 +26,14 @@ jobs:
           command: |
             python3 -m venv ./.prediction
             source ./.prediction/bin/activate
-            pip install -r requirements.txt --user
+            make install
 
       - run:
           name: Install hadolint
           command: |
             sudo wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64 &&\
-              sudo chmod +x /bin/hadolint
+              sudo chmod +x /bin/hadolint &&\
+              pip install pylint
               
       - save_cache:
           paths:
@@ -49,7 +50,6 @@ jobs:
       - run:
           name: run lint
           command: |
-            
             source ./.prediction/bin/activate
             make lint
 workflows:
