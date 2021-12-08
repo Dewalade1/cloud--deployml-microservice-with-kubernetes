@@ -49,7 +49,7 @@ jobs:
       - run:
           name: run lint
           command: |
-            source ./.devops/Scripts/activate
+            source ./.prediction/bin/activate
             make lint
 workflows:
   default:
