@@ -6,8 +6,11 @@ WORKDIR /app
 
 ## Step 2:
 # Copy source code to working directory
-COPY hello.py /app/
+COPY app.py /app/
 COPY requirements.txt /app/
+COPY boston_housing_prediction.joblib /app/
+# COPY model_data /app/
+# COPY output_txt_files /app/
 
 ## Step 3:
 # Install packages from requirements.txt
