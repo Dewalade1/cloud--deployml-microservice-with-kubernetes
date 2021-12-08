@@ -22,27 +22,40 @@ source .devops/bin/activate
 
 ### Running `app.py`
 
-1. Standalone:  `python app.py`
-2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
+1. Standalone:  
+```python app.py```
+2. Run in Docker:  
+```./run_docker.sh```
+3. Run in Kubernetes:  
+
+```./run_kubernetes.sh```
 
 ### Kubernetes Steps
 
 * Setup and Configure Docker locally
+
 ```docker build --tag=latest .```
 
 * Setup and Configure Kubernetes locally
+
 ```minikube start```
 
 * Create Flask app in Container
+
 ```docker run -it -p 8000:80 latest```
 
 * Run via kubectl
+
 ```kubectl run housing-price-prediction-app --image=$dockerpath --port=80```
 
 * Check pod status 
+
 ```kubectl get pod```
 
-* Stop Kubernetes Cluster 
-```minikube close
-Delete Kubernetes Cluster minikube delete
+* Stop Kubernetes Clusters
+
+```minikube close```
+
+* Delete Kubernetes Clusters 
+
+```minikube delete```
