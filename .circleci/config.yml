@@ -27,15 +27,17 @@ jobs:
             python3 -m venv ./.prediction
             source ./.prediction/bin/activate
             pip install -r requirements.txt --user
-      - save_cache:
-          paths:
-            - ./.prediction
-          key: v1-dependencies-{{ checksum "requirements.txt" }}
 
       - run:
           name: Install hadolint
           command: |
-            sudo make install-hadolint    
+            sudo wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64 &&\
+              sudo chmod +x /bin/hadolint
+              
+      - save_cache:
+          paths:
+            - ./.prediction
+          key: v1-dependencies-{{ checksum "requirements.txt" }}
         
       # run tests!
       - run:
