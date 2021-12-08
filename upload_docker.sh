@@ -7,8 +7,6 @@
 # Create dockerpath
 # dockerpath=<your docker ID/path>
 dockerpath=hellodewa/latest
-# dockerimage=housing_price_predicion_api
-
 # Step 2:  
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
