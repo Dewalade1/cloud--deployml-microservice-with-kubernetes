@@ -49,6 +49,7 @@ jobs:
       - run:
           name: run lint
           command: |
+            
             source ./.prediction/bin/activate
             make lint
 workflows:
